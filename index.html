@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="en" data-accent="green" data-motion="moderate" data-display="serif">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratory of Lipids and Neurological Diseases — Singh Lab · Baylor / Texas Children's</title>
+<meta name="description" content="The Singh Lab investigates how the central nervous system acquires, metabolizes, and traffics lipids — and how impaired lipid metabolism drives neurodegeneration. Baylor College of Medicine · Texas Children's Hospital, Houston.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%2306080c' stroke='%237FD96A' stroke-width='2'/><circle cx='16' cy='16' r='4' fill='%237FD96A'/></svg>">
+</head>
+<body style="background-color: rgb(2, 2, 22)">
+
+<!-- Background field -->
+<div class="bg-field" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+</div>
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<!-- Navigation -->
+<header class="nav" data-screen-label="Nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Singh Lab — home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+        <circle cx="16" cy="16" r="4" fill="#7FD96A"/>
+        <circle cx="26" cy="10" r="1.6" fill="#F4A82C"/>
+        <circle cx="6" cy="20" r="1.6" fill="#C084FC"/>
+        <line x1="20" y1="13" x2="24" y2="11" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
+        <line x1="12" y1="19" x2="8" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
+      </svg>
+      <span class="brand-text"><b>Singh</b> Lab</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#research">Research</a>
+      <a href="#methods">Methods</a>
+      <a href="#team">Team</a>
+      <a href="#publications">Publications</a>
+      <a href="#join">Join</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="nav-burger" aria-label="Menu" aria-controls="primary-nav">≡</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="eyebrow reveal">Singh Lab · Baylor College of Medicine</div>
+      <h1 class="reveal delay-1">
+        Laboratory of <span class="em">Lipids</span><br>
+        &amp; <span class="em-2">Neurological</span><br>
+        Diseases
+      </h1>
+      <p class="hero-sub reveal delay-2">
+        We investigate how the central nervous system acquires, metabolizes, and
+        traffics lipids — and how impaired lipid metabolism drives
+        neurodegeneration in diseases like <em>FTD</em>, <em>ALS</em>, and
+        <em>Parkinson's</em>.
+      </p>
+      <div class="hero-ctas reveal delay-3">
+        <a href="#research" class="btn btn-primary">
+          Explore the research
+          <svg class="arr" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#join" class="btn">
+          We're hiring
+          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#7FD96A;box-shadow:0 0 8px #7FD96A;"></span>
+        </a>
+      </div>
+      <div class="hero-meta reveal delay-4">
+        <span>Baylor College of Medicine</span>
+        <span>Texas Children's Hospital</span>
+        <span>Houston, TX</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal delay-2" aria-label="Animated phospholipid bilayer">
+      <div class="orbit-ring r2"></div>
+      <div class="orbit-ring"></div>
+      <div class="bilayer-wrap">
+        <svg id="bilayer" aria-hidden="true"></svg>
+      </div>
+      <div class="hero-labels" aria-hidden="true">
+        <div class="hero-label l1">Phospholipid bilayer</div>
+        <div class="hero-label l2">Cholesterol</div>
+        <div class="hero-label l3">Sphingolipid</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" data-screen-label="02 About">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">01 / About</div>
+        <h2 class="reveal delay-1">Scope <span class="italic accent">of work</span></h2>
+      </div>
+      <p class="lead reveal delay-2">
+        The brain is one of the most lipid-rich organs in the human body — yet how lipids are acquired, distributed, and metabolized in the central nervous system remains poorly understood. Our lab works at the interface of chemistry, biochemistry, and neuroscience to fill that gap.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="about-statement">
+          We integrate <span class="acc">LC&#x2011;MS/MS lipidomics</span>, metabolic tracing, chemical proteomics, organic synthesis, genetics, biochemistry, and <span class="acc">iPSC&#x2011;derived</span> and murine models to ask how deregulated lipid metabolism drives neurodegeneration.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat">
+            <div class="num">60%</div>
+            <div class="lbl">Brain dry weight is lipid</div>
+          </div>
+          <div class="stat">
+            <div class="num">5</div>
+            <div class="lbl">Active research questions</div>
+          </div>
+          <div class="stat">
+            <div class="num">14+</div>
+            <div class="lbl">Peer&#x2011;reviewed publications</div>
+          </div>
+          <div class="stat">
+            <div class="num">∞</div>
+            <div class="lbl">Curiosity for the field</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal delay-1">
+        <div class="affiliation-card" style="margin-bottom: 16px;">
+          <div class="label">Principal Investigator</div>
+          <div class="name">Shubham Singh, Ph.D.</div>
+          <div class="sub">Assistant Professor of Pediatrics &amp; Neurology</div>
+        </div>
+        <div class="affiliation-card" style="margin-bottom: 16px;">
+          <div class="label">Institution</div>
+          <div class="name">Baylor College of Medicine</div>
+          <div class="sub">Texas Children's Hospital · Feigin Tower</div>
+        </div>
+        <div class="affiliation-card">
+          <div class="label">Domain</div>
+          <div class="name">neurosphinx.org</div>
+          <div class="sub">A web of lipids, neurons, and the questions between.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISEASES ============ -->
+<section class="diseases" id="diseases" data-screen-label="03 Diseases">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">02 / Focus</div>
+        <h2 class="reveal delay-1">Diseases at the <span class="italic accent">lipid&#x2011;brain</span> interface</h2>
+      </div>
+      <p class="lead reveal delay-2">
+        Genetic studies have linked dozens of neurodegenerative-disease risk genes to lipid metabolism, trafficking, and lysosomal homeostasis. We focus on a small set of devastating, mechanistically connected diseases.
+      </p>
+    </div>
+
+    <div class="diseases-grid">
+      <div class="brain-figure reveal">
+        <img src="assets/research-diseases.png" alt="Brain anatomical diagram showing neurodegenerative diseases and their associated lipid-metabolism risk genes — Alzheimer's (APOE4, INPP5D, PLCG2, ABCA1, ABCA2, ABCA5), Parkinson's (GBA, PSAP, PLA2G6), FTD (GRN), ALS (PLA2G6, SPTLC1), Huntington's, and PHARC/Spastic Paraplegia (ABHD12).">
+      </div>
+
+      <div class="disease-list reveal delay-1">
+        <div class="disease-row">
+          <div class="dname">Alzheimer's disease</div>
+          <div class="dgenes">APOE4 · INPP5D · PLCG2<br>ABCA1 · ABCA2 · ABCA5</div>
+        </div>
+        <div class="disease-row">
+          <div class="dname">Parkinson's disease</div>
+          <div class="dgenes">GBA · PSAP · PLA2G6</div>
+        </div>
+        <div class="disease-row">
+          <div class="dname">Frontotemporal dementia</div>
+          <div class="dgenes">GRN</div>
+        </div>
+        <div class="disease-row">
+          <div class="dname">Amyotrophic lateral sclerosis</div>
+          <div class="dgenes">PLA2G6 · SPTLC1</div>
+        </div>
+        <div class="disease-row">
+          <div class="dname">Huntington's disease</div>
+          <div class="dgenes">Lipid dysregulation in striatum</div>
+        </div>
+        <div class="disease-row">
+          <div class="dname">PHARC &amp; spastic paraplegia</div>
+          <div class="dgenes">ABHD12</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH QUESTIONS ============ -->
+<section id="research" data-screen-label="04 Research">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">03 / Research</div>
+        <h2 class="reveal delay-1">Five questions we're <span class="italic accent">chasing</span></h2>
+      </div>
+      <p class="lead reveal delay-2">
+        Our long-running program is structured around five fundamental, interconnected questions about lipid biology in the central nervous system.
+      </p>
+    </div>
+
+    <div class="questions">
+
+      <!-- Q1 -->
+      <article class="q-block reveal">
+        <div class="q-text">
+          <div class="qnum">01</div>
+          <h3>How much of the brain's lipid is dietary <span class="italic accent">vs.</span> locally synthesized?</h3>
+          <p>
+            The blood-brain barrier restricts movement of many circulating lipids, so neural cells must tightly regulate lipid uptake and endogenous synthesis to maintain membrane integrity, myelination, and signaling. We seek to understand how the brain balances these distinct sources — and how disruption of these pathways contributes to neurological disease.
+          </p>
+          <div class="q-tags">
+            <span class="q-tag">Blood&#x2011;brain barrier</span>
+            <span class="q-tag">Cholesterol efflux</span>
+            <span class="q-tag">ApoE pathways</span>
+            <span class="q-tag">Glymphatic clearance</span>
+          </div>
+        </div>
+        <figure class="q-img">
+          <img src="assets/research-transport.png" alt="Schematic showing lipid transport into the brain: dietary lipids from gut, lipoprotein particles in blood, blood-brain barrier transport, local synthesis in neurons/astrocytes/oligodendrocytes/microglia, efflux via ApoE-dependent lipoproteins, and glymphatic CSF clearance.">
+          <figcaption class="q-img-caption">Fig. 1 — Lipid flux across the BBB</figcaption>
+        </figure>
+      </article>
+
+      <!-- Q2 -->
+      <article class="q-block flip reveal">
+        <div class="q-text">
+          <div class="qnum">02</div>
+          <h3>How does the brain split glucose between <span class="italic accent">energy</span> and <span class="italic accent">lipid synthesis</span>?</h3>
+          <p>
+            Glucose is the primary energy source for the brain — but it's also a critical building block for the synthesis of complex lipids, including glycosphingolipids that are essential for neuronal membranes, myelin formation, and cellular signaling. How the brain allocates glucose between these competing demands remains poorly understood.
+          </p>
+          <div class="q-tags">
+            <span class="q-tag">Metabolic tracing</span>
+            <span class="q-tag">Glycosphingolipids</span>
+            <span class="q-tag">Mitochondria</span>
+            <span class="q-tag">Myelin</span>
+          </div>
+        </div>
+        <figure class="q-img">
+          <img src="assets/research-glucose.png" alt="Diagram showing brain glucose utilization branching into ATP production via mitochondria and glycosphingolipid synthesis with building-block annotations (fatty acid, sphingosine, galactose, glucose, N-acetylgalactosamine, sialic acid).">
+          <figcaption class="q-img-caption">Fig. 2 — Glucose at a metabolic fork</figcaption>
+        </figure>
+      </article>
+
+      <!-- Q3 -->
+      <article class="q-block reveal">
+        <div class="q-text">
+          <div class="qnum">03</div>
+          <h3>How do <span class="italic accent">neurons &amp; glia</span> coordinate lipid metabolism?</h3>
+          <p>
+            Neurons have limited capacity for lipid storage and synthesis, so they rely heavily on glial partners — astrocytes and oligodendrocytes for lipid synthesis, microglia for lipid recycling. We're working to understand how these cell types coordinate trafficking, utilization, and clearance to maintain neuronal function and myelin integrity, and how breakdown of this partnership feeds lipid accumulation, neuroinflammation, and neurodegeneration.
+          </p>
+          <div class="q-tags">
+            <span class="q-tag">Astrocytes</span>
+            <span class="q-tag">Oligodendrocytes</span>
+            <span class="q-tag">Microglia</span>
+            <span class="q-tag">Cell&#x2011;cell trafficking</span>
+          </div>
+        </div>
+        <figure class="q-img" style="background: linear-gradient(135deg, #0c1119 0%, #050709 100%); aspect-ratio: 4/3; display:grid; place-items:center;">
+          <!-- SVG illustration: neuron-glia network -->
+          <svg viewBox="0 0 500 380" style="width: 90%; height: auto;" aria-hidden="true">
+            <defs>
+              <radialGradient id="neuronG" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0%" stop-color="rgba(192,132,252,0.6)"/>
+                <stop offset="100%" stop-color="rgba(192,132,252,0)"/>
+              </radialGradient>
+              <radialGradient id="astroG" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0%" stop-color="rgba(127,217,106,0.6)"/>
+                <stop offset="100%" stop-color="rgba(127,217,106,0)"/>
+              </radialGradient>
+              <radialGradient id="microG" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0%" stop-color="rgba(244,168,44,0.6)"/>
+                <stop offset="100%" stop-color="rgba(244,168,44,0)"/>
+              </radialGradient>
+            </defs>
+            <!-- connecting filaments -->
+            <g stroke="rgba(255,255,255,0.18)" stroke-width="0.8" fill="none">
+              <path d="M120,180 Q200,80 280,140" />
+              <path d="M280,140 Q360,220 420,160" />
+              <path d="M120,180 Q190,260 280,260" />
+              <path d="M280,260 Q360,320 420,260" />
+              <path d="M280,140 Q280,200 280,260" />
+            </g>
+            <!-- lipid droplets along paths -->
+            <g fill="#F4A82C">
+              <circle cx="160" cy="140" r="3" opacity="0.9"/>
+              <circle cx="195" cy="120" r="2.5" opacity="0.8"/>
+              <circle cx="240" cy="105" r="3.5" opacity="0.85"/>
+              <circle cx="320" cy="170" r="3" opacity="0.85"/>
+              <circle cx="365" cy="195" r="2.5" opacity="0.7"/>
+              <circle cx="155" cy="225" r="2.5" opacity="0.75"/>
+              <circle cx="220" cy="265" r="3" opacity="0.9"/>
+              <circle cx="320" cy="290" r="2.5" opacity="0.8"/>
+              <circle cx="280" cy="200" r="3" opacity="0.95"/>
+            </g>
+            <!-- neuron (purple) -->
+            <g transform="translate(120,180)">
+              <circle r="40" fill="url(#neuronG)"/>
+              <circle r="14" fill="#1a1d24" stroke="#C084FC" stroke-width="1.5"/>
+              <g stroke="#C084FC" stroke-width="1.2" fill="none" opacity="0.85">
+                <path d="M-14,-2 L-30,-12 M-30,-12 L-40,-6 M-30,-12 L-36,-22"/>
+                <path d="M-12,8 L-24,18 M-24,18 L-32,28 M-24,18 L-18,28"/>
+                <path d="M12,-8 L24,-18 M24,-18 L34,-22 M24,-18 L28,-30"/>
+                <path d="M14,2 L40,8"/>
+              </g>
+              <text x="0" y="55" font-family="JetBrains Mono" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="1.5">NEURON</text>
+            </g>
+            <!-- astrocyte (green) -->
+            <g transform="translate(280,140)">
+              <circle r="36" fill="url(#astroG)"/>
+              <circle r="10" fill="#1a1d24" stroke="#7FD96A" stroke-width="1.5"/>
+              <g stroke="#7FD96A" stroke-width="1.2" fill="none" opacity="0.85">
+                <path d="M-10,0 L-22,-8 M-22,-8 L-30,-2 M-22,-8 L-28,-16"/>
+                <path d="M-8,8 L-16,18 M-16,18 L-24,22"/>
+                <path d="M8,-8 L18,-18 M18,-18 L26,-22"/>
+                <path d="M10,2 L22,8 M22,8 L30,4"/>
+              </g>
+              <text x="0" y="50" font-family="JetBrains Mono" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="1.5">ASTROCYTE</text>
+            </g>
+            <!-- oligodendrocyte (cyan) -->
+            <g transform="translate(420,160)">
+              <circle r="30" fill="url(#astroG)" opacity="0.6"/>
+              <circle r="9" fill="#1a1d24" stroke="#67E8F9" stroke-width="1.5"/>
+              <g stroke="#67E8F9" stroke-width="1" fill="none" opacity="0.8">
+                <path d="M-9,-2 L-18,-10 M-9,2 L-18,10"/>
+                <path d="M9,-2 L18,-10 M9,2 L18,10"/>
+                <path d="M0,-9 L0,-18 M0,9 L0,18"/>
+                <ellipse cx="-18" cy="-10" rx="6" ry="3"/>
+                <ellipse cx="18" cy="-10" rx="6" ry="3"/>
+                <ellipse cx="-18" cy="10" rx="6" ry="3"/>
+                <ellipse cx="18" cy="10" rx="6" ry="3"/>
+              </g>
+              <text x="0" y="44" font-family="JetBrains Mono" font-size="7" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="1.2">OLIGODENDROCYTE</text>
+            </g>
+            <!-- microglia (orange) -->
+            <g transform="translate(280,260)">
+              <circle r="32" fill="url(#microG)"/>
+              <circle r="9" fill="#1a1d24" stroke="#F4A82C" stroke-width="1.5"/>
+              <g stroke="#F4A82C" stroke-width="1.1" fill="none" opacity="0.85">
+                <path d="M-9,-2 L-18,-12 M-18,-12 L-26,-16"/>
+                <path d="M-8,6 L-16,14 M-16,14 L-22,22"/>
+                <path d="M6,-8 L12,-18 M12,-18 L16,-26"/>
+                <path d="M9,2 L20,8 M20,8 L28,12"/>
+                <path d="M2,9 L4,20 M4,20 L0,28"/>
+              </g>
+              <text x="0" y="46" font-family="JetBrains Mono" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="1.5">MICROGLIA</text>
+            </g>
+            <!-- arrows -->
+            <g fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono" font-size="8" letter-spacing="1">
+              <text x="200" y="100" fill="#7FD96A">lipid synthesis →</text>
+              <text x="200" y="335" fill="#F4A82C">← recycling</text>
+            </g>
+          </svg>
+          <figcaption class="q-img-caption">Fig. 3 — Neuron–glia lipid traffic</figcaption>
+        </figure>
+      </article>
+
+      <!-- Q4 -->
+      <article class="q-block flip reveal">
+        <div class="q-text">
+          <div class="qnum">04</div>
+          <h3>How does <span class="italic accent">genetic variation</span> in lipid metabolism predispose to neurodegeneration?</h3>
+          <p>
+            Mutations in genes involved in cholesterol metabolism, sphingolipid degradation, and lipid transport can disrupt neuronal lipid balance — leading to lipid accumulation, neuroinflammation, and cellular dysfunction. We work to understand why these defects selectively predispose neurons to degeneration, with the goal of uncovering new biomarkers and therapeutic targets.
+          </p>
+          <div class="q-tags">
+            <span class="q-tag">APOE · ABCA</span>
+            <span class="q-tag">GBA · GRN</span>
+            <span class="q-tag">ABHD12 · SPTLC1</span>
+            <span class="q-tag">Lysosomal homeostasis</span>
+          </div>
+        </div>
+        <figure class="q-img">
+          <img src="assets/research-diseases.png" alt="Brain anatomical figure overlaid with neurodegeneration risk genes mapped to disease regions.">
+          <figcaption class="q-img-caption">Fig. 4 — Risk genes mapped to disease</figcaption>
+        </figure>
+      </article>
+
+      <!-- Q5 -->
+      <article class="q-block reveal">
+        <div class="q-text">
+          <div class="qnum">05</div>
+          <h3>Can lipid signatures <span class="italic accent">predict</span> sporadic neurodegeneration before symptoms?</h3>
+          <p>
+            Most neurodegenerative diseases occur sporadically, without a clear inherited cause — yet many exhibit profound disturbances in lipid metabolism. Aging, diet, metabolic stress, inflammation, and environmental factors may progressively disrupt lipid homeostasis in the brain. We're working to understand how these alterations emerge during early disease progression, and whether specific lipid signatures can serve as <em>biomarkers</em> to predict risk before symptoms appear.
+          </p>
+          <div class="q-tags">
+            <span class="q-tag">Plasma lipidomics</span>
+            <span class="q-tag">Biomarkers</span>
+            <span class="q-tag">Aging</span>
+            <span class="q-tag">Lipid droplets</span>
+          </div>
+        </div>
+        <figure class="q-img">
+          <img src="assets/research-sporadic.png" alt="Sporadic neurodegeneration: factors including aging, environmental exposures, metabolic stress, inflammation and lifestyle leading to brain lipid accumulation. Comparison of healthy control brain and neurodegenerated brain showing accumulation of lipid droplets and sphingolipids; with research questions about mechanism and biomarker potential.">
+          <figcaption class="q-img-caption">Fig. 5 — Sporadic disease &amp; lipid signatures</figcaption>
+        </figure>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section id="methods" data-screen-label="05 Methods">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">04 / Approach</div>
+        <h2 class="reveal delay-1">An <span class="italic accent">interdisciplinary</span> toolkit</h2>
+      </div>
+      <p class="lead reveal delay-2">
+        Lipid biology demands tools from many fields. We combine quantitative mass spectrometry, chemical biology, and modern cellular models to ask questions no single technique could answer.
+      </p>
+    </div>
+
+    <div class="methods-grid">
+      <div class="method-card reveal">
+        <span class="idx">01</span>
+        <svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M4 26 L8 14 L11 22 L15 8 L19 24 L22 16 L25 20 L28 12"/>
+          <line x1="4" y1="28" x2="28" y2="28"/>
+        </svg>
+        <h4>LC&#x2011;MS/MS lipidomics</h4>
+        <p>Quantitative profiling of hundreds of lipid species across tissues, fluids, and cellular compartments.</p>
+      </div>
+
+      <div class="method-card reveal delay-1">
+        <span class="idx">02</span>
+        <svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="16" cy="16" r="3"/>
+          <circle cx="6" cy="8" r="2"/>
+          <circle cx="26" cy="8" r="2"/>
+          <circle cx="6" cy="24" r="2"/>
+          <circle cx="26" cy="24" r="2"/>
+          <path d="M8 9 L13 14 M24 9 L19 14 M8 23 L13 18 M24 23 L19 18"/>
+        </svg>
+        <h4>Metabolic tracing</h4>
+        <p>Isotope-labeled precursors track the synthesis, breakdown, and inter-organelle flow of brain lipids.</p>
+      </div>
+
+      <div class="method-card reveal delay-2">
+        <span class="idx">03</span>
+        <svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="6" y="6" width="20" height="20" rx="2"/>
+          <path d="M10 12 L22 12 M10 16 L18 16 M10 20 L20 20"/>
+        </svg>
+        <h4>Chemical proteomics</h4>
+        <p>Activity-based probes and chemical-genetic screens map lipid-binding and lipid-modifying enzymes.</p>
+      </div>
+
+      <div class="method-card reveal delay-3">
+        <span class="idx">04</span>
+        <svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <polygon points="16,4 28,12 28,22 16,28 4,22 4,12"/>
+          <line x1="16" y1="4" x2="16" y2="16"/>
+          <line x1="16" y1="16" x2="28" y2="22"/>
+          <line x1="16" y1="16" x2="4" y2="22"/>
+        </svg>
+        <h4>Organic synthesis</h4>
+        <p>Custom lipid probes, isotopologs, and bioactive analogs designed and synthesized in-house.</p>
+      </div>
+
+      <div class="method-card reveal">
+        <span class="idx">05</span>
+        <svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M8 6 Q16 16 8 26 M24 6 Q16 16 24 26"/>
+          <circle cx="11" cy="11" r="1.4" fill="currentColor"/>
+          <circle cx="21" cy="14" r="1.4" fill="currentColor"/>
+          <circle cx="11" cy="21" r="1.4" fill="currentColor"/>
+          <circle cx="21" cy="22" r="1.4" fill="currentColor"/>
+        </svg>
+        <h4>Genetics &amp; molecular biology</h4>
+        <p>CRISPR, knockouts, and disease-variant models to interrogate gene–lipid–phenotype links.</p>
+      </div>
+
+      <div class="method-card reveal delay-1">
+        <span class="idx">06</span>
+        <svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="16" cy="14" r="6"/>
+          <path d="M16 20 L16 24 M10 24 L22 24 M11 28 L21 28"/>
+          <circle cx="14" cy="13" r="1" fill="currentColor"/>
+          <circle cx="18" cy="13" r="1" fill="currentColor"/>
+        </svg>
+        <h4>iPSC&#x2011;derived models</h4>
+        <p>Patient-derived stem cells differentiated into neurons, astrocytes, and microglia for human disease modeling.</p>
+      </div>
+
+      <div class="method-card reveal delay-2">
+        <span class="idx">07</span>
+        <svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q26 24 22 26 L10 26 Q6 24 6 18 Z"/>
+          <circle cx="12" cy="16" r="1.2" fill="currentColor"/>
+          <circle cx="20" cy="16" r="1.2" fill="currentColor"/>
+          <path d="M14 21 Q16 23 18 21"/>
+        </svg>
+        <h4>Murine models</h4>
+        <p>Genetically engineered mouse models for in-vivo lipidomics, behavior, and longitudinal disease tracking.</p>
+      </div>
+
+      <div class="method-card reveal delay-3">
+        <span class="idx">08</span>
+        <svg class="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="11" cy="16" r="6"/>
+          <circle cx="21" cy="16" r="6"/>
+          <path d="M14 13 L18 19 M18 13 L14 19"/>
+        </svg>
+        <h4>Biochemistry</h4>
+        <p>Enzymology and structural biochemistry of lipid hydrolases, transferases, and transport proteins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section id="team" data-screen-label="06 Team">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">05 / People</div>
+        <h2 class="reveal delay-1">The <span class="italic accent">team</span></h2>
+      </div>
+      <p class="lead reveal delay-2">
+        We're a small, interdisciplinary group of chemists, biochemists, and neuroscientists asking ambitious questions about brain lipid biology.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <!-- PI -->
+      <div class="member pi reveal">
+        <div class="member-photo placeholder" aria-label="Photo of Shubham Singh — Principal Investigator">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="38" r="18" fill="currentColor" opacity="0.4"/>
+            <path d="M18 92 Q18 64 50 64 Q82 64 82 92" fill="currentColor" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="member-body">
+          <div class="member-name">Shubham Singh</div>
+          <div class="member-role">Principal Investigator · Asst. Prof. of Pediatrics/Neurology</div>
+          <p class="member-bio">
+            Trained at the intersection of chemistry and lipid biology. Shubham founded the lab to ask how lipid dysregulation drives neurodegenerative disease, building on a decade of work in lipid hydrolase biochemistry, chemical proteomics, and lipidomics.
+          </p>
+        </div>
+      </div>
+
+      <!-- Jyotsna -->
+      <div class="member reveal delay-1">
+        <div class="member-photo placeholder" aria-label="Photo placeholder for Jyotsna Shukla">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="38" r="18" fill="currentColor" opacity="0.4"/>
+            <path d="M18 92 Q18 64 50 64 Q82 64 82 92" fill="currentColor" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="member-body">
+          <div class="member-name">Jyotsna Shukla</div>
+          <div class="member-role">Postdoctoral Fellow</div>
+          <p class="member-bio">
+            Ph.D. in immunology (National Institute of Immunology); postdoctoral training at IISER-Pune. Investigates how deregulated lipids drive neuroinflammation and neurodegeneration.
+          </p>
+        </div>
+      </div>
+
+      <!-- Femil -->
+      <div class="member reveal delay-2">
+        <div class="member-photo placeholder" aria-label="Photo placeholder for Femil J. Shajan">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="38" r="18" fill="currentColor" opacity="0.4"/>
+            <path d="M18 92 Q18 64 50 64 Q82 64 82 92" fill="currentColor" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="member-body">
+          <div class="member-name">Femil J. Shajan</div>
+          <div class="member-role">Postdoctoral Fellow</div>
+          <p class="member-bio">
+            Ph.D. in Chemical Biology (Temple University). Studies mechanisms of lipid transport in the central nervous system and how defects in these pathways contribute to neurodegeneration.
+          </p>
+        </div>
+      </div>
+
+      <!-- Srividhya -->
+      <div class="member reveal" style="grid-column: span 1;">
+        <div class="member-photo" aria-label="Photo of Srividhya Raja">
+          <img src="assets/team-srividhya.jpg" alt="Srividhya Raja, Research Assistant">
+        </div>
+        <div class="member-body">
+          <div class="member-name">Srividhya Raja</div>
+          <div class="member-role">Research Assistant · M.S.</div>
+          <p class="member-bio">
+            Research volunteer in the lab, training in molecular biology and mass spectrometry–based omics approaches.
+          </p>
+        </div>
+      </div>
+
+      <!-- Open position card -->
+      <div class="member reveal delay-1" style="border-style: dashed; background: transparent;">
+        <div class="member-photo placeholder" style="background: linear-gradient(135deg, rgba(127,217,106,0.06) 0%, transparent 100%);" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="34" stroke="rgba(127,217,106,0.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="50" y1="38" x2="50" y2="62" stroke="#7FD96A" stroke-width="2"/>
+            <line x1="38" y1="50" x2="62" y2="50" stroke="#7FD96A" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="member-body">
+          <div class="member-name">Your name here.</div>
+          <div class="member-role">Postdoc · Grad Student · Intern</div>
+          <p class="member-bio">
+            We're actively recruiting curious scientists across all career stages. <a href="#join" style="color: var(--accent); text-decoration: underline;">See open positions →</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="member reveal delay-2" style="border-style: dashed; background: transparent; opacity: 0.85;">
+        <div class="member-photo placeholder" style="background: linear-gradient(135deg, rgba(244,168,44,0.05) 0%, transparent 100%);" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="38" r="18" fill="rgba(255,255,255,0.15)"/>
+            <path d="M18 92 Q18 64 50 64 Q82 64 82 92" fill="rgba(255,255,255,0.15)"/>
+          </svg>
+        </div>
+        <div class="member-body">
+          <div class="member-name">Your name here.</div>
+          <div class="member-role">Postdoc · Grad Student · Intern</div>
+          <p class="member-bio">
+            Multiple openings. Send a CV + cover letter to <a href="mailto:shubham.singh@bcm.edu" style="color: var(--accent);">shubham.singh@bcm.edu</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alumni -->
+    <div class="alumni-block reveal">
+      <h3>Alumni</h3>
+      <table class="alumni-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role in lab</th>
+            <th>Next destination</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hanna Norwood</td>
+            <td>Research Technician II</td>
+            <td>M.D. at McGovern Medical School (UTHealth), Houston</td>
+          </tr>
+          <tr>
+            <td>Venkata Pullabhotla</td>
+            <td>Intern</td>
+            <td>Undergraduate at Rice University, Houston</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section id="publications" data-screen-label="07 Publications">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">06 / Publications</div>
+        <h2 class="reveal delay-1">Selected <span class="italic accent">publications</span></h2>
+      </div>
+      <p class="lead reveal delay-2">
+        Work spanning lipid hydrolase biochemistry, lipidomics, lysosomal lipid metabolism, and biomarker discovery in neurodegenerative disease. Full list on Google Scholar.
+      </p>
+    </div>
+
+    <div class="pubs-list">
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-meta">Alzheimer's &amp; Dementia · PMID 40922380</div>
+          <h4 class="pub-title">Plasma lipidome dysregulation in frontotemporal dementia reveals shared, genotype-specific, and severity-linked alterations.</h4>
+          <p class="pub-authors">Ambaw Y., Ljubenkov P.A., <b>Singh S.</b>, Hamed A., Sebastian B., Boxer A.L., Walther T.C.*, Farese R.V.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-meta">bioRxiv · Manuscript in preparation</div>
+          <h4 class="pub-title">LipidCruncher: an open-source web application for processing, visualizing, analyzing lipidomics data.</h4>
+          <p class="pub-authors">Hamed A., Ambaw Y., <b>Singh S.</b>, Weng Z.L., Farese R.V.*, Walther T.C.*</p>
+        </div>
+        <a class="pub-link" href="http://lipidcruncher-alb-2004716200.us-east-1.elb.amazonaws.com:8501/" target="_blank" rel="noopener">App ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-meta">Cell · 187(24), 6820–6834</div>
+          <h4 class="pub-title">PLD3 and PLD4 synthesize S,S-BMP, a key phospholipid enabling lipid degradation in lysosomes.</h4>
+          <p class="pub-authors"><b>Singh S.</b>, U.D., Ambaw Y., Joshua L.S., Farese R.V.*, Walther T.C.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-meta">Nat. Cell Biology · In revision</div>
+          <h4 class="pub-title">Senescence impedes ferroptosis through SASP-mediated GCH1 upregulation.</h4>
+          <p class="pub-authors">Peng N., <b>Singh S.</b>, Zhao Z., Kim J., Mo Y., Farese R.V., Walther T.C., Jiang X.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-meta">Nature Communications · 13, 5924</div>
+          <h4 class="pub-title">Deficiency of frontotemporal dementia gene GRN results in gangliosidosis.</h4>
+          <p class="pub-authors">Sebastian B., Swarup S., Ambaw Y., Richards R.C., Fischer A.W., <b>Singh S.</b>, Aggarwal G., …, Harper J.W., Walther T.C.*, Farese R.V.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2022</div>
+        <div>
+          <div class="pub-meta">eLife · 11, e77665</div>
+          <h4 class="pub-title">DIP2 is a unique regulator of diacylglycerol lipid homeostasis in eukaryotes.</h4>
+          <p class="pub-authors">Mondal S., Kinatukara P., <b>Singh S.</b>, Sailasree P., Patil G.S., Shambhavi S., Madduri K.M., Kamat S.S., Kumar S., Sankaranarayanan R.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2022</div>
+        <div>
+          <div class="pub-meta">PNAS · 119(8), e2110293119</div>
+          <h4 class="pub-title">Kupyaphores are zinc homeostatic metallophores required for colonization of <em>Mycobacterium tuberculosis</em>.</h4>
+          <p class="pub-authors">Mehdiratta K., <b>Singh S.</b>, Sharma S., Bhosale R., et al., Mohanty D., Reddy D.S., Natarajan V.T., Kamat S.S.*, Gokhale R.S.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-meta">Eur. J. Neuroscience · 54(10)</div>
+          <h4 class="pub-title">Loss of enzymatic activity of the PHARC-associated lipase ABHD12 results in increased phagocytosis that causes neuroinflammation.</h4>
+          <p class="pub-authors"><b>Singh S.</b>, Kamat S.S.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2020</div>
+        <div>
+          <div class="pub-meta">Biochemistry · 59(24), 2299–2311</div>
+          <h4 class="pub-title">Mapping the neuroanatomy of ABHD16A–ABHD12 and lysophosphatidylserine provides new insights into the pathophysiology of PHARC.</h4>
+          <p class="pub-authors"><b>Singh S.*</b>, Joshi A., Kamat S.S.* <em>(*Co-corresponding author)</em></p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2019</div>
+        <div>
+          <div class="pub-meta">Nature Chemical Biology · 15, 169–178</div>
+          <h4 class="pub-title">A chemical genetic screen identifies ABHD12 as an oxidized phosphatidylserine lipase.</h4>
+          <p class="pub-authors">Kelkar D.S., Ravikumar G., Mehendale N., <b>Singh S.</b>, Joshi A., Sharma A.K., Mhetre A., Rajendran A., Chakrapani H., Kamat S.S.</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+    </div>
+
+    <div class="pubs-footer reveal">
+      <p style="color: var(--text-dim); max-width: 52ch; margin: 0;">
+        Showing 10 selected publications. A full list including reviews and methods papers is on Google Scholar.
+      </p>
+      <a class="btn" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ&hl=en" target="_blank" rel="noopener">
+        Full list on Google Scholar
+        <svg class="arr" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN ============ -->
+<section class="join" id="join" data-screen-label="08 Join">
+  <div class="wrap">
+    <div class="join-inner reveal">
+      <div class="eyebrow">07 / Open positions</div>
+      <h2>Join us at the <span class="italic accent">interface</span> of chemistry &amp; the brain.</h2>
+
+      <div class="join-grid">
+        <div>
+          <p class="lead">
+            We're actively recruiting <strong style="color:var(--text);font-weight:600;">postdocs</strong>, <strong style="color:var(--text);font-weight:600;">graduate students</strong>, and <strong style="color:var(--text);font-weight:600;">research interns</strong>. Curiosity, scientific rigor, and a willingness to learn across disciplines matter more to us than a particular technical pedigree.
+          </p>
+          <p style="color: var(--text-dim); margin-top: 24px;">
+            Send a cover letter, CV, and contact information for three references to:
+          </p>
+          <a class="btn btn-primary" href="mailto:shubham.singh@bcm.edu" style="margin-top: 16px;">
+            shubham.singh@bcm.edu
+            <svg class="arr" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="join-positions">
+          <div class="position">
+            <div class="position-name">Postdoctoral Fellow</div>
+            <div class="position-status">Open</div>
+          </div>
+          <div class="position">
+            <div class="position-name">Graduate Student</div>
+            <div class="position-status">Open</div>
+          </div>
+          <div class="position">
+            <div class="position-name">Research Intern</div>
+            <div class="position-status">Open</div>
+          </div>
+          <div class="position">
+            <div class="position-name">Research Volunteer</div>
+            <div class="position-status">Rolling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" data-screen-label="09 Contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">08 / Contact</div>
+        <h2 class="reveal delay-1">Find <span class="italic accent">us</span></h2>
+      </div>
+      <p class="lead reveal delay-2">
+        We're on the 10th floor of Feigin Tower on the Texas Medical Center campus in Houston. Drop a line — we love hearing from prospective collaborators, students, and patient families.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-list reveal">
+
+        <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 22s-7-7.58-7-13a7 7 0 1 1 14 0c0 5.42-7 13-7 13z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          <div>
+            <div class="label">Address</div>
+            <div class="val">
+              1102 Bates Avenue<br>
+              Feigin Tower, 10th floor<br>
+              Houston, TX 77030
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M3 7l9 6 9-6"/>
+          </svg>
+          <div>
+            <div class="label">Email</div>
+            <div class="val"><a href="mailto:shubham.singh@bcm.edu">shubham.singh@bcm.edu</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>
+          </svg>
+          <div>
+            <div class="label">Web</div>
+            <div class="val"><a href="https://neurosphinx.org" target="_blank" rel="noopener">neurosphinx.org</a></div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M22 12c0 5.52-4.48 10-10 10s-10-4.48-10-10S6.48 2 12 2"/>
+            <path d="M22 2L12 12"/>
+            <path d="M22 8V2h-6"/>
+          </svg>
+          <div>
+            <div class="label">Scholar</div>
+            <div class="val"><a href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ&hl=en" target="_blank" rel="noopener">Publication list ↗</a></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="map-card reveal delay-1">
+        <iframe
+          title="Feigin Tower, Texas Children's Hospital — map"
+          src="https://www.google.com/maps?q=Feigin+Tower+1102+Bates+Houston+TX+77030&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" data-screen-label="Footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <em>Laboratory of Lipids &amp; Neurological Diseases</em><br>
+      <span style="color: var(--text-mute); font-style: normal; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;">
+        BAYLOR COLLEGE OF MEDICINE · TEXAS CHILDREN'S HOSPITAL
+      </span>
+    </div>
+    <div class="footer-meta">© 2026 · Singh Lab · neurosphinx.org</div>
+  </div>
+</footer>
+
+</main>
+
+<!-- ============ TWEAKS PANEL ============ -->
+<aside class="tweaks" aria-label="Tweaks">
+  <h5>
+    Tweaks
+    <button class="close" aria-label="Close">×</button>
+  </h5>
+
+  <div class="tweak-group">
+    <div class="lbl">Accent color</div>
+    <div class="tweak-row">
+      <button class="swatch active" data-key="accent" data-val="green" style="background:#7FD96A" aria-label="Green"></button>
+      <button class="swatch" data-key="accent" data-val="amber" style="background:#F4A82C" aria-label="Amber"></button>
+      <button class="swatch" data-key="accent" data-val="violet" style="background:#C084FC" aria-label="Violet"></button>
+      <button class="swatch" data-key="accent" data-val="cyan" style="background:#67E8F9" aria-label="Cyan"></button>
+    </div>
+  </div>
+
+  <div class="tweak-group">
+    <div class="lbl">Background motion</div>
+    <div class="tweak-row">
+      <button data-key="motion" data-val="off">Off</button>
+      <button data-key="motion" data-val="subtle">Subtle</button>
+      <button data-key="motion" data-val="moderate" class="active">Moderate</button>
+      <button data-key="motion" data-val="bold">Bold</button>
+    </div>
+  </div>
+
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
