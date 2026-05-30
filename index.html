@@ -36,7 +36,8 @@
         <line x1="20" y1="13" x2="24" y2="11" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
         <line x1="12" y1="19" x2="8" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="0.6"/>
       </svg>
-      <span class="brand-text"><b>Singh</b> Lab</span>
+      <span class="brand-text"><b>Laboratory of Lipids
+& </b> Neurological Diseases</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#research">Research</a>
@@ -56,7 +57,7 @@
 <section class="hero" data-screen-label="01 Hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <div class="eyebrow reveal">Singh Lab · Baylor College of Medicine</div>
+      <div class="eyebrow reveal">Baylor College of Medicine</div>
       <h1 class="reveal delay-1">
         Laboratory of <span class="em">Lipids</span><br>
         &amp; <span class="em-2">Neurological</span><br>
@@ -107,6 +108,24 @@
   </div>
 </section>
 
+<!-- ============ LAB OVERVIEW ============ -->
+<section class="lab-overview" id="overview" data-screen-label="01b Overview">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow reveal">00 / Overview</div>
+        <h2 class="reveal delay-1">Our <span class="italic accent">research program</span></h2>
+      </div>
+      <p class="lead reveal delay-2">
+        An integrated, interdisciplinary program decoding brain lipid biology to combat neurodegenerative diseases.
+      </p>
+    </div>
+    <figure class="overview-figure reveal">
+      <img src="assets/lab-overview.webp" alt="Lab overview infographic: Decoding Brain Lipid Biology to Combat Neurodegenerative Diseases — showing LC-MS/MS lipidomics, metabolic tracing, chemical proteomics, organic synthesis, genetics, molecular biology, iPSC-derived models, murine models, and biochemistry radiating from a central brain visualization. Mission: to understand how lipids shape brain function and drive disease, and to translate discoveries into therapeutic strategies.">
+    </figure>
+  </div>
+</section>
+
 <!-- ============ ABOUT ============ -->
 <section id="about" data-screen-label="02 About">
   <div class="wrap">
@@ -152,15 +171,10 @@
           <div class="name">Shubham Singh, Ph.D.</div>
           <div class="sub">Assistant Professor of Pediatrics &amp; Neurology</div>
         </div>
-        <div class="affiliation-card" style="margin-bottom: 16px;">
+        <div class="affiliation-card">
           <div class="label">Institution</div>
           <div class="name">Baylor College of Medicine</div>
           <div class="sub">Texas Children's Hospital · Feigin Tower</div>
-        </div>
-        <div class="affiliation-card">
-          <div class="label">Domain</div>
-          <div class="name">neurosphinx.org</div>
-          <div class="sub">A web of lipids, neurons, and the questions between.</div>
         </div>
       </div>
     </div>
@@ -182,7 +196,7 @@
 
     <div class="diseases-grid">
       <div class="brain-figure reveal">
-        <img src="assets/research-diseases.png" alt="Brain anatomical diagram showing neurodegenerative diseases and their associated lipid-metabolism risk genes — Alzheimer's (APOE4, INPP5D, PLCG2, ABCA1, ABCA2, ABCA5), Parkinson's (GBA, PSAP, PLA2G6), FTD (GRN), ALS (PLA2G6, SPTLC1), Huntington's, and PHARC/Spastic Paraplegia (ABHD12).">
+        <img src="assets/research-diseases.webp" alt="Brain anatomical diagram showing neurodegenerative diseases and their associated lipid-metabolism risk genes — Alzheimer's (APOE4, INPP5D, PLCG2, ABCA1, ABCA2, ABCA5), Parkinson's (GBA, PSAP, PLA2G6), FTD (GRN), ALS (PLA2G6, SPTLC1), Huntington's, and PHARC/Spastic Paraplegia (ABHD12).">
       </div>
 
       <div class="disease-list reveal delay-1">
@@ -246,7 +260,7 @@
           </div>
         </div>
         <figure class="q-img">
-          <img src="assets/research-transport.png" alt="Schematic showing lipid transport into the brain: dietary lipids from gut, lipoprotein particles in blood, blood-brain barrier transport, local synthesis in neurons/astrocytes/oligodendrocytes/microglia, efflux via ApoE-dependent lipoproteins, and glymphatic CSF clearance.">
+          <img src="assets/research-q1.webp" alt="Schematic showing lipid transport into the brain: dietary lipids from gut, lipoprotein particles in blood, blood-brain barrier transport, local synthesis in neurons/astrocytes/oligodendrocytes/microglia, efflux via ApoE-dependent lipoproteins, and glymphatic CSF clearance.">
           <figcaption class="q-img-caption">Fig. 1 — Lipid flux across the BBB</figcaption>
         </figure>
       </article>
@@ -267,7 +281,7 @@
           </div>
         </div>
         <figure class="q-img">
-          <img src="assets/research-glucose.png" alt="Diagram showing brain glucose utilization branching into ATP production via mitochondria and glycosphingolipid synthesis with building-block annotations (fatty acid, sphingosine, galactose, glucose, N-acetylgalactosamine, sialic acid).">
+          <img src="assets/research-q2.webp" alt="Diagram showing brain glucose utilization branching into ATP production via mitochondria and glycosphingolipid synthesis with building-block annotations (fatty acid, sphingosine, galactose, glucose, N-acetylgalactosamine, sialic acid).">
           <figcaption class="q-img-caption">Fig. 2 — Glucose at a metabolic fork</figcaption>
         </figure>
       </article>
@@ -287,101 +301,8 @@
             <span class="q-tag">Cell&#x2011;cell trafficking</span>
           </div>
         </div>
-        <figure class="q-img" style="background: linear-gradient(135deg, #0c1119 0%, #050709 100%); aspect-ratio: 4/3; display:grid; place-items:center;">
-          <!-- SVG illustration: neuron-glia network -->
-          <svg viewBox="0 0 500 380" style="width: 90%; height: auto;" aria-hidden="true">
-            <defs>
-              <radialGradient id="neuronG" cx="0.5" cy="0.5" r="0.5">
-                <stop offset="0%" stop-color="rgba(192,132,252,0.6)"/>
-                <stop offset="100%" stop-color="rgba(192,132,252,0)"/>
-              </radialGradient>
-              <radialGradient id="astroG" cx="0.5" cy="0.5" r="0.5">
-                <stop offset="0%" stop-color="rgba(127,217,106,0.6)"/>
-                <stop offset="100%" stop-color="rgba(127,217,106,0)"/>
-              </radialGradient>
-              <radialGradient id="microG" cx="0.5" cy="0.5" r="0.5">
-                <stop offset="0%" stop-color="rgba(244,168,44,0.6)"/>
-                <stop offset="100%" stop-color="rgba(244,168,44,0)"/>
-              </radialGradient>
-            </defs>
-            <!-- connecting filaments -->
-            <g stroke="rgba(255,255,255,0.18)" stroke-width="0.8" fill="none">
-              <path d="M120,180 Q200,80 280,140" />
-              <path d="M280,140 Q360,220 420,160" />
-              <path d="M120,180 Q190,260 280,260" />
-              <path d="M280,260 Q360,320 420,260" />
-              <path d="M280,140 Q280,200 280,260" />
-            </g>
-            <!-- lipid droplets along paths -->
-            <g fill="#F4A82C">
-              <circle cx="160" cy="140" r="3" opacity="0.9"/>
-              <circle cx="195" cy="120" r="2.5" opacity="0.8"/>
-              <circle cx="240" cy="105" r="3.5" opacity="0.85"/>
-              <circle cx="320" cy="170" r="3" opacity="0.85"/>
-              <circle cx="365" cy="195" r="2.5" opacity="0.7"/>
-              <circle cx="155" cy="225" r="2.5" opacity="0.75"/>
-              <circle cx="220" cy="265" r="3" opacity="0.9"/>
-              <circle cx="320" cy="290" r="2.5" opacity="0.8"/>
-              <circle cx="280" cy="200" r="3" opacity="0.95"/>
-            </g>
-            <!-- neuron (purple) -->
-            <g transform="translate(120,180)">
-              <circle r="40" fill="url(#neuronG)"/>
-              <circle r="14" fill="#1a1d24" stroke="#C084FC" stroke-width="1.5"/>
-              <g stroke="#C084FC" stroke-width="1.2" fill="none" opacity="0.85">
-                <path d="M-14,-2 L-30,-12 M-30,-12 L-40,-6 M-30,-12 L-36,-22"/>
-                <path d="M-12,8 L-24,18 M-24,18 L-32,28 M-24,18 L-18,28"/>
-                <path d="M12,-8 L24,-18 M24,-18 L34,-22 M24,-18 L28,-30"/>
-                <path d="M14,2 L40,8"/>
-              </g>
-              <text x="0" y="55" font-family="JetBrains Mono" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="1.5">NEURON</text>
-            </g>
-            <!-- astrocyte (green) -->
-            <g transform="translate(280,140)">
-              <circle r="36" fill="url(#astroG)"/>
-              <circle r="10" fill="#1a1d24" stroke="#7FD96A" stroke-width="1.5"/>
-              <g stroke="#7FD96A" stroke-width="1.2" fill="none" opacity="0.85">
-                <path d="M-10,0 L-22,-8 M-22,-8 L-30,-2 M-22,-8 L-28,-16"/>
-                <path d="M-8,8 L-16,18 M-16,18 L-24,22"/>
-                <path d="M8,-8 L18,-18 M18,-18 L26,-22"/>
-                <path d="M10,2 L22,8 M22,8 L30,4"/>
-              </g>
-              <text x="0" y="50" font-family="JetBrains Mono" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="1.5">ASTROCYTE</text>
-            </g>
-            <!-- oligodendrocyte (cyan) -->
-            <g transform="translate(420,160)">
-              <circle r="30" fill="url(#astroG)" opacity="0.6"/>
-              <circle r="9" fill="#1a1d24" stroke="#67E8F9" stroke-width="1.5"/>
-              <g stroke="#67E8F9" stroke-width="1" fill="none" opacity="0.8">
-                <path d="M-9,-2 L-18,-10 M-9,2 L-18,10"/>
-                <path d="M9,-2 L18,-10 M9,2 L18,10"/>
-                <path d="M0,-9 L0,-18 M0,9 L0,18"/>
-                <ellipse cx="-18" cy="-10" rx="6" ry="3"/>
-                <ellipse cx="18" cy="-10" rx="6" ry="3"/>
-                <ellipse cx="-18" cy="10" rx="6" ry="3"/>
-                <ellipse cx="18" cy="10" rx="6" ry="3"/>
-              </g>
-              <text x="0" y="44" font-family="JetBrains Mono" font-size="7" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="1.2">OLIGODENDROCYTE</text>
-            </g>
-            <!-- microglia (orange) -->
-            <g transform="translate(280,260)">
-              <circle r="32" fill="url(#microG)"/>
-              <circle r="9" fill="#1a1d24" stroke="#F4A82C" stroke-width="1.5"/>
-              <g stroke="#F4A82C" stroke-width="1.1" fill="none" opacity="0.85">
-                <path d="M-9,-2 L-18,-12 M-18,-12 L-26,-16"/>
-                <path d="M-8,6 L-16,14 M-16,14 L-22,22"/>
-                <path d="M6,-8 L12,-18 M12,-18 L16,-26"/>
-                <path d="M9,2 L20,8 M20,8 L28,12"/>
-                <path d="M2,9 L4,20 M4,20 L0,28"/>
-              </g>
-              <text x="0" y="46" font-family="JetBrains Mono" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="1.5">MICROGLIA</text>
-            </g>
-            <!-- arrows -->
-            <g fill="rgba(255,255,255,0.4)" font-family="JetBrains Mono" font-size="8" letter-spacing="1">
-              <text x="200" y="100" fill="#7FD96A">lipid synthesis →</text>
-              <text x="200" y="335" fill="#F4A82C">← recycling</text>
-            </g>
-          </svg>
+        <figure class="q-img">
+          <img src="assets/research-q3.webp" alt="How brain cells communicate and share lipids: neuron, astrocyte, oligodendrocyte, and microglia interactions. Astrocytes make and store lipids and supply them to other cells; oligodendrocytes use lipids to build and maintain myelin; microglia remove damaged material and recycle lipids. Key questions on division of labor, lipid transport routes, and regulatory signals.">
           <figcaption class="q-img-caption">Fig. 3 — Neuron–glia lipid traffic</figcaption>
         </figure>
       </article>
@@ -402,7 +323,7 @@
           </div>
         </div>
         <figure class="q-img">
-          <img src="assets/research-diseases.png" alt="Brain anatomical figure overlaid with neurodegeneration risk genes mapped to disease regions.">
+          <img src="assets/research-q4.webp" alt="Brain anatomical figure overlaid with neurodegeneration risk genes mapped to disease regions — Alzheimer's, Parkinson's, FTD, ALS, Huntington's, and PHARC/Spastic Paraplegia.">
           <figcaption class="q-img-caption">Fig. 4 — Risk genes mapped to disease</figcaption>
         </figure>
       </article>
@@ -423,7 +344,7 @@
           </div>
         </div>
         <figure class="q-img">
-          <img src="assets/research-sporadic.png" alt="Sporadic neurodegeneration: factors including aging, environmental exposures, metabolic stress, inflammation and lifestyle leading to brain lipid accumulation. Comparison of healthy control brain and neurodegenerated brain showing accumulation of lipid droplets and sphingolipids; with research questions about mechanism and biomarker potential.">
+          <img src="assets/research-q5.webp" alt="Sporadic neurodegeneration: factors including aging, environmental exposures, metabolic stress, inflammation and lifestyle leading to brain lipid accumulation. Comparison of healthy control brain and neurodegenerated brain showing accumulation of lipid droplets and sphingolipids; with research questions about mechanism and biomarker potential.">
           <figcaption class="q-img-caption">Fig. 5 — Sporadic disease &amp; lipid signatures</figcaption>
         </figure>
       </article>
@@ -559,11 +480,8 @@
     <div class="team-grid">
       <!-- PI -->
       <div class="member pi reveal">
-        <div class="member-photo placeholder" aria-label="Photo of Shubham Singh — Principal Investigator">
-          <svg viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="38" r="18" fill="currentColor" opacity="0.4"/>
-            <path d="M18 92 Q18 64 50 64 Q82 64 82 92" fill="currentColor" opacity="0.4"/>
-          </svg>
+        <div class="member-photo" aria-label="Photo of Shubham Singh — Principal Investigator">
+          <img src="assets/team-shubham.webp" alt="Shubham Singh, Principal Investigator — wearing a white lab coat with Baylor College of Medicine and Texas Children's Hospital badges">
         </div>
         <div class="member-body">
           <div class="member-name">Shubham Singh</div>
@@ -576,11 +494,8 @@
 
       <!-- Jyotsna -->
       <div class="member reveal delay-1">
-        <div class="member-photo placeholder" aria-label="Photo placeholder for Jyotsna Shukla">
-          <svg viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="38" r="18" fill="currentColor" opacity="0.4"/>
-            <path d="M18 92 Q18 64 50 64 Q82 64 82 92" fill="currentColor" opacity="0.4"/>
-          </svg>
+        <div class="member-photo" aria-label="Photo of Jyotsna Shukla">
+          <img src="assets/team-jyotsna.webp" alt="Jyotsna Shukla, Postdoctoral Fellow">
         </div>
         <div class="member-body">
           <div class="member-name">Jyotsna Shukla</div>
@@ -593,11 +508,8 @@
 
       <!-- Femil -->
       <div class="member reveal delay-2">
-        <div class="member-photo placeholder" aria-label="Photo placeholder for Femil J. Shajan">
-          <svg viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="38" r="18" fill="currentColor" opacity="0.4"/>
-            <path d="M18 92 Q18 64 50 64 Q82 64 82 92" fill="currentColor" opacity="0.4"/>
-          </svg>
+        <div class="member-photo" aria-label="Photo of Femil J. Shajan">
+          <img src="assets/team-femil.webp" alt="Femil J. Shajan, Postdoctoral Fellow">
         </div>
         <div class="member-body">
           <div class="member-name">Femil J. Shajan</div>
@@ -611,7 +523,7 @@
       <!-- Srividhya -->
       <div class="member reveal" style="grid-column: span 1;">
         <div class="member-photo" aria-label="Photo of Srividhya Raja">
-          <img src="assets/team-srividhya.jpg" alt="Srividhya Raja, Research Assistant">
+          <img src="assets/team-srividhya.webp" alt="Srividhya Raja, Research Assistant">
         </div>
         <div class="member-body">
           <div class="member-name">Srividhya Raja</div>
@@ -751,6 +663,16 @@
       </article>
 
       <article class="pub-item reveal">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-meta">Microbiology Spectrum · 11(1), e02597-22</div>
+          <h4 class="pub-title">Respiratory quinone switch from menaquinone to polyketide quinone during the development cycle in <em>Streptomyces</em> sp. MNU77.</h4>
+          <p class="pub-authors">Mehdiratta K., Nain S., Sharma M., <b>Singh S.</b>, Srivastva S., Dhamale B.D., Mohanty D., Kamat S.S., Natarajan V.T., Sharma R., Gokhale R.S.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
         <div class="pub-year">2022</div>
         <div>
           <div class="pub-meta">eLife · 11, e77665</div>
@@ -773,9 +695,19 @@
       <article class="pub-item reveal">
         <div class="pub-year">2021</div>
         <div>
-          <div class="pub-meta">Eur. J. Neuroscience · 54(10)</div>
+          <div class="pub-meta">Eur. J. Neuroscience · 54(10), 7442–7457</div>
           <h4 class="pub-title">Loss of enzymatic activity of the PHARC-associated lipase ABHD12 results in increased phagocytosis that causes neuroinflammation.</h4>
           <p class="pub-authors"><b>Singh S.</b>, Kamat S.S.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-meta">Chemical Science · 12, 12939–12949</div>
+          <h4 class="pub-title">Leveraging an enzyme/artificial substrate system to enhance cellular persulfides and mitigate neuroinflammation.</h4>
+          <p class="pub-authors">Bora P., Manna S., Nair M., Sathe R., <b>Singh S.</b>, Adury V.S.S., Gupta K., Mukherjee A., Saini D.K., Kamat S.S., Hazra A.B.*, Chakrapani H.*</p>
         </div>
         <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
       </article>
@@ -791,11 +723,51 @@
       </article>
 
       <article class="pub-item reveal">
+        <div class="pub-year">2020</div>
+        <div>
+          <div class="pub-meta">Cell Chemical Biology · 2021 Jan 21; S2451-9456(21)00008</div>
+          <h4 class="pub-title">Fatty acid chain length drives lysophosphatidylserine-dependent immunological outputs.</h4>
+          <p class="pub-authors">Khandewal N.<sup>#</sup>, Sheikh M.<sup>#</sup>, Mhetre A.<sup>#</sup>, <b>Singh S.</b><sup>#</sup>, Sajeevan T., Joshi A., Balaji N.K., Chakrapani H., Kamat S.S.* <em>(<sup>#</sup>Equal contribution)</em></p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2020</div>
+        <div>
+          <div class="pub-meta">Transgenic Research · 29, 553–562</div>
+          <h4 class="pub-title">Pre-natal growth retardation rate and fast mass accumulation in mice lacking Dip2A is dependent on dietary lipid nutrients.</h4>
+          <p class="pub-authors">Kinatukara P., Sailasree P., Patil G.S., Shambhavi S., <b>Singh S.</b>, Mhetre A., Madduri K.M., Kamat S.S., Kumar S., Sankaranarayanan R.*</p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
         <div class="pub-year">2019</div>
         <div>
           <div class="pub-meta">Nature Chemical Biology · 15, 169–178</div>
           <h4 class="pub-title">A chemical genetic screen identifies ABHD12 as an oxidized phosphatidylserine lipase.</h4>
-          <p class="pub-authors">Kelkar D.S., Ravikumar G., Mehendale N., <b>Singh S.</b>, Joshi A., Sharma A.K., Mhetre A., Rajendran A., Chakrapani H., Kamat S.S.</p>
+          <p class="pub-authors">Kelkar D.S.<sup>#</sup>, Ravikumar G.<sup>#</sup>, Mehendale N.<sup>#</sup>, <b>Singh S.</b><sup>#</sup>, Joshi A., Sharma A.K., Mhetre A., Rajendran A., Chakrapani H., Kamat S.S. <em>(<sup>#</sup>Equal contribution)</em></p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2018</div>
+        <div>
+          <div class="pub-meta">J. Biological Chemistry · 293(44), 16953–16963</div>
+          <h4 class="pub-title">Biochemical characterization of the PHARC-associated serine hydrolase ABHD12 reveals its preference for very long chain lipids.</h4>
+          <p class="pub-authors">Joshi A.<sup>#</sup>, Shaikh M.<sup>#</sup>, <b>Singh S.</b><sup>#</sup>, Rajendran A., Mhetre A., Kamat S.S.* <em>(<sup>#</sup>Equal contribution)</em></p>
+        </div>
+        <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
+      </article>
+
+      <article class="pub-item reveal">
+        <div class="pub-year">2018</div>
+        <div>
+          <div class="pub-meta">ACS Chemical Biology · 13(8), 2280–2287</div>
+          <h4 class="pub-title">Lipidomics suggests a new role for ceramide synthase in phagocytosis.</h4>
+          <p class="pub-authors">Pathak D.<sup>#</sup>, Mehendale N.<sup>#</sup>, <b>Singh S.</b>, Mallik R., Kamat S.S.* <em>(<sup>#</sup>Equal contribution)</em></p>
         </div>
         <a class="pub-link" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ" target="_blank" rel="noopener">View ↗</a>
       </article>
@@ -804,7 +776,7 @@
 
     <div class="pubs-footer reveal">
       <p style="color: var(--text-dim); max-width: 52ch; margin: 0;">
-        Showing 10 selected publications. A full list including reviews and methods papers is on Google Scholar.
+        Showing 16 publications. Full list including reviews and methods papers on Google Scholar.
       </p>
       <a class="btn" href="https://scholar.google.com/citations?user=1XDJk2wAAAAJ&hl=en" target="_blank" rel="noopener">
         Full list on Google Scholar
