@@ -1058,11 +1058,60 @@ h4 {
   pointer-events: none;
 }
 
+/* ---------- Team group photo ---------- */
+.team-group-photo {
+  margin: 0 0 64px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #000;
+  line-height: 0;
+}
+.team-group-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: saturate(0.9) contrast(1.03);
+  transition: transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.team-group-photo:hover img { transform: scale(1.02); }
+.team-group-photo figcaption {
+  padding: 14px 20px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  border-top: 1px solid var(--line);
+  background: rgba(6,8,12,0.6);
+  line-height: 1.4;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   padding: 60px 0 40px;
   border-top: 1px solid var(--line);
 }
+
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.inst-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+  filter: saturate(0.8) brightness(0.92);
+  opacity: 0.85;
+  transition: opacity 200ms, filter 200ms;
+}
+.inst-logo:hover { opacity: 1; filter: saturate(1) brightness(1); }
+
 .footer-inner {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -1077,12 +1126,40 @@ h4 {
   font-size: 18px;
   color: var(--text-dim);
 }
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+@media (max-width: 720px) { .footer-right { align-items: flex-start; } }
+
 .footer-meta {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-mute);
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 14px;
+  transition: color 180ms, border-color 180ms, transform 200ms;
+}
+.back-to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* ---------- Reveal animation ---------- */
